@@ -168,14 +168,17 @@ button {
 }
 
 .hero-title {
-  font-size: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  font-size: 96px;
   font-weight: 400;
-  line-height: 1.32;
+  line-height: 1.05;
   letter-spacing: -2.5px;
   margin: 40px 0 0;
 }
 
-.hero-line { display: inline-block; }
+.hero-line { display: flex; align-items: center; flex-wrap: wrap; }
 
 .hero-underline {
   position: relative;
@@ -204,7 +207,7 @@ button {
   white-space: nowrap;
   letter-spacing: -0.3px;
   box-shadow: 0px 6px 12px 0px #0000005c;
-  margin: 6px 4px;
+  margin: 4px 6px;
 }
 
 .pill-secondary { background: var(--secondary); color: #fff; }
@@ -687,7 +690,7 @@ button {
   .strip { padding: 12px 20px; }
   .page-title { font-size: 44px; }
   .hero-kicker { font-size: 30px; }
-  .hero-title { font-size: 36px; letter-spacing: -1px; }
+  .hero-title { font-size: 54px; letter-spacing: -1px; gap: 16px; }
   .hero-split { grid-template-columns: 1fr; }
   .hero-intro { border-right: none; border-bottom: var(--bw-thick) solid var(--ink); }
   .project-columns { grid-template-columns: 1fr; }
