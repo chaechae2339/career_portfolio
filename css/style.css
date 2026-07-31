@@ -188,7 +188,7 @@ button {
 }
 
 .dot-anchor {
-  display: block;
+  display: none;
 }
 
 .hero-italic {
