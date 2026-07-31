@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오롯이, 나 — 쉼터 거주 청년 자립 지원 프로젝트</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root{
+    --paper:#F4F1EA;
+    --paper-deep:#EAE5D8;
+    --ink:#111111;
+    --ink-soft:#5C574E;
+    --line:#111111;
+    --clay:#C8102E;
+    --moss:#111111;
+    --sky:#111111;
+    --gold:#EFAA00;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Pretendard',sans-serif;
+    font-weight:400;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .hero{
+    padding:120px 0 70px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .eyebrow{
+    font-size:0.78rem;
+    letter-spacing:0.28em;
+    font-weight:500;
+    color:var(--clay);
+    text-transform:uppercase;
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:'Pretendard',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.6rem,6vw,4.4rem);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin-bottom:8px;
+  }
+  .hero .sub{
+    font-family:'Pretendard',sans-serif;
+    font-size:clamp(1.05rem,2.3vw,1.35rem);
+    color:var(--ink-soft);
+    margin-bottom:40px;
+    font-weight:400;
+  }
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0 40px;
+    padding-top:30px;
+    border-top:1px dashed var(--line);
+    max-width:680px;
+  }
+  .meta div{padding:10px 0;}
+  .meta dt{
+    font-size:0.7rem;
+    letter-spacing:0.14em;
+    color:var(--clay);
+    font-weight:600;
+    margin-bottom:3px;
+    text-transform:uppercase;
+  }
+  .meta dd{font-size:0.95rem;color:var(--ink);font-weight:400;}
+  section{padding:76px 0;border-bottom:1px solid var(--line);}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:38px;}
+  .sec-num{
+    font-family:'Pretendard',sans-serif;
+    font-size:1rem;
+    color:var(--clay);
+    font-weight:700;
+    letter-spacing:0.05em;
+    flex-shrink:0;
+    padding-top:4px;
+  }
+  .sec-title{
+    font-family:'Pretendard',sans-serif;
+    font-weight:700;
+    font-size:clamp(1.5rem,3.4vw,2.1rem);
+    line-height:1.3;
+    letter-spacing:-0.01em;
+  }
+  .sec-title small{display:block;font-family:'Pretendard';font-size:0.82rem;font-weight:500;letter-spacing:0.12em;color:var(--ink-soft);margin-top:8px;}
+  p.body{font-size:1.02rem;margin-bottom:20px;max-width:720px;}
+  p.body strong{font-weight:600;color:var(--ink);border-bottom:2px solid var(--gold);padding-bottom:1px;}
+  .lead{
+    font-family:'Pretendard',sans-serif;
+    font-size:clamp(1.15rem,2.6vw,1.5rem);
+    line-height:1.7;
+    color:var(--ink);
+    font-weight:400;
+    max-width:740px;
+    margin-bottom:34px;
+  }
+  .stat-row{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 6px;}
+  .stat{
+    flex:1 1 200px;
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    padding:24px 22px;
+  }
+  .stat .n{font-family:'Pretendard',sans-serif;font-size:2.2rem;font-weight:700;color:var(--clay);line-height:1;}
+  .stat .l{font-size:0.85rem;color:var(--ink-soft);margin-top:10px;font-weight:400;}
+  .quote-field{
+    background:var(--paper-deep);
+    border-left:3px solid var(--clay);
+    padding:26px 30px;
+    margin:30px 0;
+    max-width:720px;
+  }
+  .quote-field .q{
+    font-family:'Pretendard',sans-serif;
+    font-size:1.2rem;
+    font-weight:400;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .quote-field .who{font-size:0.8rem;color:var(--ink-soft);margin-top:12px;letter-spacing:0.04em;}
+  .pivot{margin-top:20px;}
+  .pivot .step{
+    display:grid;
+    grid-template-columns:130px 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .pivot .step:last-child{border-bottom:1px solid var(--line);}
+  .pivot .tag{
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    font-weight:700;
+    color:#111;
+    background:var(--gold);
+    padding:5px 10px;
+    display:inline-block;
+    text-align:center;
+    white-space:nowrap;
+  }
+  .pivot .tag.fail{background:var(--clay);color:#fff;}
+  .pivot .tag.pivot-t{background:var(--moss);color:#fff;}
+  .pivot .step h4{font-family:'Pretendard',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:8px;}
+  .pivot .step p{font-size:0.98rem;color:var(--ink-soft);font-weight:400;}
+  .arc-intro{max-width:720px;margin-bottom:44px;}
+  .arc{position:relative;margin-left:8px;}
+  .arc::before{
+    content:'';
+    position:absolute;
+    left:7px;top:8px;bottom:8px;
+    width:2px;
+    background:linear-gradient(to bottom,var(--clay),var(--sky),var(--moss),var(--gold));
+  }
+  .node{position:relative;padding:0 0 44px 44px;}
+  .node:last-child{padding-bottom:0;}
+  .node .dot{
+    position:absolute;left:0;top:4px;
+    width:16px;height:16px;border-radius:50%;
+    background:var(--paper);
+    border:3px solid var(--clay);
+  }
+  .node.b .dot{border-color:var(--sky);}
+  .node.c .dot{border-color:var(--moss);}
+  .node.d .dot{border-color:var(--gold);}
+  .node .phase{font-size:0.72rem;letter-spacing:0.16em;font-weight:600;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px;}
+  .node .motif{font-family:'Pretendard',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:10px;line-height:1.4;}
+  .node .motif span{color:var(--clay);font-size:0.9rem;font-weight:400;display:block;margin-top:2px;letter-spacing:0.02em;}
+  .node.b .motif span{color:var(--sky);}
+  .node.c .motif span{color:var(--moss);}
+  .node.d .motif span{color:var(--gold);}
+  .node p{font-size:0.98rem;color:var(--ink-soft);font-weight:400;max-width:640px;}
+  .node .voice{
+    font-family:'Pretendard',sans-serif;
+    font-style:normal;
+    font-size:1.02rem;
+    color:var(--ink);
+    margin-top:12px;
+    padding-left:16px;
+    border-left:2px solid var(--line);
+    max-width:600px;
+  }
+  .imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px;}
+  .imp{
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    padding:26px 24px;
+  }
+  .imp h4{font-family:'Pretendard',sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  .imp h4::before{content:'';width:9px;height:9px;background:var(--moss);border-radius:50%;flex-shrink:0;}
+  .imp p{font-size:0.94rem;color:var(--ink-soft);font-weight:400;}
+  .closing{padding:80px 0 110px;border-bottom:none;text-align:left;}
+  .closing .big{
+    font-family:'Pretendard',sans-serif;
+    font-size:clamp(1.5rem,3.6vw,2.3rem);
+    font-weight:700;
+    line-height:1.5;
+    max-width:760px;
+    letter-spacing:-0.01em;
+  }
+  .closing .big em{font-style:normal;color:var(--clay);}
+  .credit{margin-top:40px;font-size:0.82rem;color:var(--ink-soft);letter-spacing:0.03em;line-height:1.9;}
+  .credit a{color:var(--clay);text-decoration:none;border-bottom:1px solid var(--line);}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+  @media(max-width:640px){
+    .hero{padding:88px 0 54px;}
+    .pivot .step{grid-template-columns:1fr;gap:10px;}
+    .imp-grid{grid-template-columns:1fr;}
+    .meta{gap:0 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">Project 01 · 청년 자립 / 미술치료</div>
+    <h1 class="reveal">오롯이, 나</h1>
+    <p class="sub reveal">가정 밖에 놓인 청년이, 스스로의 삶을 마주할 힘을 되찾기까지</p>
+    <dl class="meta reveal">
+      <div><dt>대상</dt><dd>쉼터 거주 청년</dd></div>
+      <div><dt>연계</dt><dd>금천 청소년 쉼터</dd></div>
+      <div><dt>역할</dt><dd>주치료사 · 기획·운영</dd></div>
+      <div><dt>기간</dt><dd>2019 · 총 20회기</dd></div>
+      <div><dt>결과물</dt><dd>KCI 등재 학술논문</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">01</div>
+      <h2 class="sec-title">왜 이 문제였나<small>PROBLEM · 제도가 닿지 못한 사각지대</small></h2>
+    </div>
+    <p class="lead reveal">가정 밖으로 나온 청년에게 사회가 건네는 것은 대개 '거처'와 '직업'이었습니다. 그러나 정작 이들이 직업을 유지하는 등 삶을 다시 세우지 못하는 이유는, 무너진 마음에 대한 회복이 함께 이루어지지 못함에 있었습니다.</p>
+    <p class="body reveal">원가정의 폭력과 방임 등의 다양한 이유로 집을 나온 청년들은 취업·현물 중심의 지원을 받고도 자립의 문턱에서 되돌아서곤 했습니다. 오랜 방임으로 누적된 <strong>심리적 무기력</strong>과, 실패를 자기 탓으로 돌리는 <strong>비관적 설명 양식</strong>이 남아 있는 한, 어떤 지원도 오래 작동하지 못했기 때문입니다.</p>
+    <p class="body reveal">저는 여기서 진짜 문제를 다시 물었습니다. "왜 경제적 지원을 받고도 청년들은 현장에서 중도에 이탈하는가?" 표면의 결핍이 아니라, 그 아래에서 삶을 스스로 조절할 힘, 즉 자립의 심리적 토대가 비어 있다는 것이 제가 내린 진단이었습니다.</p>
+    <div class="quote-field reveal">
+      <div class="q">"쉼터에 들어오지 말고 그냥 가출할 걸 그랬어요."</div>
+      <div class="who">— 프로젝트의 출발점이 된 한 청소년의 말</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">02</div>
+      <h2 class="sec-title">가설이 무너진 자리에서<small>PROBLEM SOLVING · 실패를 데이터로 삼다</small></h2>
+    </div>
+    <p class="body reveal">첫 가설은 단순했습니다. <strong>"심리적 개입이 이루어지면 자립 의지가 생길 것이다."</strong> 선행연구도 가정 밖 청년이 필요로 하는 지원의 우선순위에 심리적 지원이 있음을 뒷받침했습니다. 그러나 현장은 가설대로 움직이지 않았습니다.</p>
+    <p class="body reveal">청년마다 집을 나온 배경(폭력·방임 등)이 달랐고, 부모와의 단절 정도도, 자립을 바라보는 절박함의 크기도 모두 제각각이었습니다. 같은 '심리적 개입'이 누구에게도 똑같이 작동하지 않았습니다. 저는 이 어긋남을 실패가 아니라, 문제를 다시 정의하라는 <strong>현장의 신호</strong>로 읽었습니다.</p>
+
+    <div class="pivot reveal">
+      <div class="step">
+        <div><span class="tag fail">가설 붕괴</span></div>
+        <div>
+          <h4>추상적인 '심리적 개입'은 작동하지 않았다</h4>
+          <p>막연한 정서 지원만으로는 자립 의지가 생기지 않았습니다. 청년에게 정작 필요한 건 '자신의 삶을 끝까지 책임질 수 있다'는 자기 믿음과 유사 경험의 축적이었습니다.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div><span class="tag pivot-t">문제 재정의</span></div>
+        <div>
+          <h4>'낙관성'이라는 구체적 역량으로 좁히다</h4>
+          <p>긍정심리학의 낙관성 이론을 접목해, 실패를 스스로 반박하고 재해석하는 인지 기술을 기르는 방향으로 프로그램을 다시 설계했습니다. 막연한 위로가 아니라 '훈련 가능한 역량'으로 목표를 바꾼 것입니다.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div><span class="tag">유연한 운영</span></div>
+        <div>
+          <h4>매 회기, 대상자에 맞춰 커리큘럼을 조정하다</h4>
+          <p>한 참여자가 프로그램을 중도 이탈하려 할 때, 억지로 붙잡는 대신 '언제든 돌아올 수 있는 관계망'이 있음을 인지시켰습니다. 통제가 아니라 선택을 존중하는 방식으로, 대상자를 지원의 대상이 아닌 결정의 주체로 대했습니다.</p>
+          <h4 style="margin-top:16px;">변화의 과정을 기록하고 데이터화하다</h4>
+          <p>물감·휴지·석고처럼 방어를 낮추는 재료로 억눌린 감정을 안전하게 꺼내게 하고, 그 과정의 행동·언어·작품을 모두 기록해 반복적 비교분석법으로 축적했습니다. 이를 통해 대상자의 변화를 데이터화하여 추적하였습니다.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03</div>
+      <h2 class="sec-title">그림을 통해 표현한 변화의 순간<small>IMPACT · 20회기, 상징의 이동</small></h2>
+    </div>
+    <p class="arc-intro lead reveal">이 프로젝트에서 대상자의 변화는 말이 아니라 그림으로 먼저 드러났습니다.<br>회기가 쌓일수록 작품 속 상징을 <em style="font-style:normal;color:var(--clay)">불안</em>에서 <em style="font-style:normal;color:var(--gold)">자기 이해</em>와 <em style="font-style:normal;color:var(--gold)">성취</em>로 옮겨갔습니다.</p>
+
+    <div class="arc">
+      <div class="node a reveal">
+        <div class="dot"></div>
+        <div class="phase">1 · 초기 — 균형 잃은 삶</div>
+        <div class="motif">모든 것을 움켜쥔 여덟 개의 손<span>〈사과 따는 사람〉 · 〈새로운 날〉</span></div>
+        <p>무엇을 원하는지 모른 채 여러 일을 벌이며 안절부절못하던 시기. 성과는 갈망하지만 방법은 모르는, 소진된 자신을 마주했습니다.</p>
+        <div class="voice">"많은 걸 하는 손이고요. 제가 여덟 명이었으면 좋겠어요."</div>
+      </div>
+      <div class="node b reveal">
+        <div class="dot"></div>
+        <div class="phase">2 · 중기 — 억눌린 감정과의 대면</div>
+        <div class="motif">우울이 턱끝까지 차오른 나<span>〈석고 계란화〉 · 〈흘러가는 고민들〉</span></div>
+        <p>회피해 왔던 아버지에 대한 분노, 두고 온 동생에 대한 죄책감을 처음으로 직면하고 표현했습니다. 무기력했던 그때의 자신을 인정하면서 마음은 한결 가벼워졌습니다.</p>
+        <div class="voice">"불안해서 우울이 턱 끝까지 차올라요."</div>
+      </div>
+      <div class="node c reveal">
+        <div class="dot"></div>
+        <div class="phase">3 · 종결 — 방향의 재발견</div>
+        <div class="motif">끝까지 걸어가 보겠다는 마음의 시작<span>〈목표〉 · 〈끝까지 가자〉</span></div>
+        <p>파고 있던 '우물'이 너무 많았음을 스스로 깨닫고, 무엇에 집중할지 선택했습니다. "설령 원하던 보물이 아니어도, 끝까지 해냈다면 실패가 아니다"라는 인지 전환에 도달했습니다.</p>
+        <div class="voice">"내가 실패하는 감정보다, 내가 끝까지 했구나 하는 느낌이 들고… 한번 끝까지 해보고 싶어요."</div>
+      </div>
+      <div class="node d reveal">
+        <div class="dot"></div>
+        <div class="phase">4 · 자립 — 스스로를 믿는 힘</div>
+        <div class="motif">정착할 곳을 아는 새<span>〈멋진 밤〉 · 〈사과나무에서 사과 따는 사람〉</span></div>
+        <p>비현실적인 도피 계획 대신 한국에서의 현실적 미래를 설계하기 시작했고, 단절했던 어머니와의 관계를 먼저 복원해 자립의 자원으로 삼았습니다. 대학 진학의 꿈과 경제활동을 병행하며, 자립 계획을 세운 뒤 쉼터를 퇴소했습니다.</p>
+        <div class="voice">"행복은 자기가 선택하는 것 같아요. 앞으로 당연히 좋은 일이 생길 거다, 내가 만들 거니까."</div>
+      </div>
+    </div>
+
+    <div class="stat-row reveal">
+      <div class="stat"><div class="n">20<span style="font-size:1rem">회기</span></div><div class="l">사전·사후 검사 포함 고밀도 개입</div></div>
+      <div class="stat"><div class="n">KCI</div><div class="l">과정을 검증 가능한 학술 자산으로 발표</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04</div>
+      <h2 class="sec-title">다음을 위한 개선점<small>NEXT · 한 사람의 변화를 구조로</small></h2>
+    </div>
+    <p class="body reveal">이 프로젝트는 한 청년의 깊은 변화를 이끌었지만, 그만큼 <strong>개별 밀착 사례</strong>였다는 한계도 분명했습니다. 다음 단계는 이 깊이를 잃지 않으면서 더 많은 청년에게 닿을 수 있는 구조를 만드는 것입니다.</p>
+    <div class="imp-grid">
+      <div class="imp reveal"><h4>개별 개입 → 확산 가능한 모델</h4><p>한 사람에게 통한 20회기 설계를 참여자 특성별로 모듈화해, 배경·연령이 다른 청년에게도 조정 적용할 수 있는 프로그램 체계로 발전시킵니다.</p></div>
+      <div class="imp reveal"><h4>단기 개입 → 자립 이후까지 중장기 개입</h4><p>퇴소 시점에 종료되던 개입을, 자립 이후의 적응까지 추적하는 장기 설계로 확장해 변화의 지속성을 검증합니다.</p></div>
+      <div class="imp reveal"><h4>치료사 개인 → 프로그램화</h4><p>실제로 졸업 후 모교를 쉼터의 실습처로 연계하고 후속 치료사를 교육해, 제가 떠난 뒤에도 개입이 이어지는 구조를 남겼습니다. 이 순환을 제도화하는 것이 다음 과제입니다.</p></div>
+      <div class="imp reveal"><h4>개인 변화 → 사회 인식 개선</h4><p>'가출·비행'이라는 편견에 가린 가정 밖 청년의 서사와 축적한 데이터를 근거로 사회 인식을 바꾸는 콘텐츠로 확장합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <p class="big reveal">한 번의 개입으로 끝나지 않도록,<br><em>스스로 삶을 성장시키고 나아갈 수 있는 힘을 갖게 하는 경험</em>을 제공하는 것.<br>그것이 제가 정의하는 자립 지원입니다.</p>
+    <p class="credit reveal">
+      본 프로젝트는 석사 학위연구를 바탕으로 KCI 등재 학술지에 게재되었습니다.<br>
+      정은채·한경아 (2019). 자립을 준비하는 쉼터 거주 청소년의 낙관성을 위한 미술치료 질적 사례 연구. 『조형교육』 71집.<br>
+      <span style="color:var(--ink-soft)">* 대상자 보호를 위해 사례의 세부 정보는 익명·각색 처리되었습니다.</span>
+    </p>
+  </div>
+</section>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+    // Safety net: guarantee visibility even if the observer never fires in this environment.
+    setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 1500);
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>

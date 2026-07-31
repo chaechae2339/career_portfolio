@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jung Eunchae — Career Portfolio</title>
+<meta name="description" content="정은채 커리어 포트폴리오 — 지속가능한 구조를 만드는 콘텐츠 기획자, 통합적 사고력의 문제 해결자">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand" data-nav="home">Jung Eunchae</div>
+  <nav class="site-nav">
+    <button class="nav-item" data-nav="home"><span class="nav-dot"></span><span class="nav-label">Home</span></button>
+    <button class="nav-item" data-nav="resume"><span class="nav-dot"></span><span class="nav-label">Resume</span></button>
+    <button class="nav-item" data-nav="career"><span class="nav-dot"></span><span class="nav-label">Career Journey</span></button>
+    <button class="nav-item" data-nav="project"><span class="nav-dot"></span><span class="nav-label">Project</span></button>
+    <button class="nav-item" data-nav="partner"><span class="nav-dot"></span><span class="nav-label">Partner Review</span></button>
+  </nav>
+  <a class="mail-btn" href="mailto:art-chae@naver.com">art-chae@naver.com</a>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="page" data-page="home">
+    <div class="strip">
+      <span>Career Portfolio</span><span>2026</span>
+    </div>
+    <div class="grid-bg">
+      <div class="wrap-hero">
+        <div class="hero-kicker">Who I am:</div>
+        <div class="hero-title">
+          <span class="hero-line">
+            <span class="hero-underline">지속가능한 구조<span class="dot-anchor dot-start"></span><span class="dot-anchor dot-end"></span></span>를
+          </span><br>
+          <span class="hero-line">
+            만드는<span class="pill pill-secondary pill-tilt-1">콘텐츠 기획</span>
+          </span><br>
+          <span class="hero-line">
+            <span class="hero-italic">문제 해결자</span><span class="pill pill-dark pill-tilt-2">통합적 사고력</span>
+          </span>
+          <span class="pill pill-accent pill-tilt-3">ESG/CSR/CSV 관점</span>
+        </div>
+
+        <div class="hero-split">
+          <div class="hero-intro">
+            <p>'내담자'의 범위를 사람에서 법인(회사)으로 넓혀왔습니다. <br>개인의 변화에서 출발해 집단과 기업의 변화로 넓히며 쌓은 경험을 우리 사회의 중심인 청년의 변화로 확장하겠습니다.</p>
+            <div class="hero-actions">
+              <button class="btn btn-dark" data-nav="resume">이력서 보기 →</button>
+              <button class="btn btn-outline" data-nav="project">프로젝트 보기 →</button>
+            </div>
+          </div>
+          <div class="hero-index">
+            <div id="home-index-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="page" data-page="resume">
+    <div class="page-inner">
+      <h1 class="page-title">Resume</h1>
+      <div id="resume-sections"></div>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section class="page" data-page="project">
+    <div id="project-list-view" class="page-inner">
+      <h1 class="page-title project-title">Project</h1>
+      <p class="page-lede">사회문제 해결 콘텐츠부터 기업의 ESG 전략까지, 현장의 목소리를 담아온 프로젝트들입니다.</p>
+      <div class="project-columns">
+        <div>
+          <div class="project-col-title">사회문제 해결 Project</div>
+          <div class="project-col-list" id="social-projects"></div>
+        </div>
+        <div>
+          <div class="project-col-title">ESG 기반 문제해결 Project</div>
+          <div class="project-col-list" id="esg-projects"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-detail-view" class="project-detail-view" hidden>
+      <div class="page-inner detail-back-wrap">
+        <button class="back-btn" data-close-project>← Project</button>
+      </div>
+      <div id="project-detail-iframe-holder"></div>
+      <div id="project-detail-generic" class="page-inner project-generic" hidden></div>
+    </div>
+  </section>
+
+  <!-- CAREER JOURNEY -->
+  <section class="page" data-page="career">
+    <div class="page-inner career-inner">
+      <h1 class="page-title">Career Journey</h1>
+      <p class="page-lede">서로 다른 듯 보이는 경험이지만, 하나의 Career Goal을 이루는 과정으로써 4개의 경험을 쌓아왔습니다.</p>
+
+      <div class="timeline-scroll"><div class="timeline">
+        <svg viewBox="0 0 1200 300" class="timeline-svg" preserveAspectRatio="none">
+          <path d="M50 40 C 220 40, 300 130, 400 150" fill="none" stroke="var(--secondary)" stroke-width="7" stroke-dasharray="2 12" stroke-linecap="round"></path>
+          <path d="M230 130 C 320 135, 350 145, 400 150" fill="none" stroke="var(--accent)" stroke-width="7" stroke-dasharray="2 12" stroke-linecap="round"></path>
+          <path d="M310 220 C 350 190, 370 165, 400 150" fill="none" stroke="var(--secondary)" stroke-width="7" stroke-dasharray="2 12" stroke-linecap="round"></path>
+          <path d="M400 150 L 1150 150" fill="none" stroke="#111" stroke-width="9" stroke-dasharray="2 13" stroke-linecap="round"></path>
+        </svg>
+
+        <div class="tl-card tl-goal" style="left:805px; top:51px;">
+          <div class="tl-goal-label">Career Goal</div>
+          <div class="tl-goal-value">지속가능한 사회문제 해결자</div>
+        </div>
+        <div class="tl-node tl-node-dark" style="left:936px; top:105px;">05</div>
+        <div class="tl-node tl-node-dark2" style="left:515px; top:104px;">04</div>
+        <div class="tl-card" style="left:439px; top:142px; text-align:center;">
+          <div class="tl-period">2022년 11월–2026년 5월</div>
+          <div class="tl-role">ESG 공시 및 전략 컨설턴트</div>
+        </div>
+        <div class="tl-card" style="left:2px; top:12px;">
+          <div class="tl-period">2019년</div>
+          <div class="tl-role">교육학 석사 졸업</div>
+          <div class="tl-node tl-node-secondary" style="left:101px; top:7px;">01</div>
+        </div>
+        <div class="tl-card" style="left:64px; top:88px; width:127px;">
+          <div class="tl-period">2020년</div>
+          <div class="tl-role" style="text-align:center;">미술치료사</div>
+          <div class="tl-node tl-node-accent" style="left:103px; top:4px;">02</div>
+        </div>
+        <div class="tl-card" style="left:99px; top:164px;">
+          <div class="tl-period">2021년~2022년 7월</div>
+          <div class="tl-role">심리 콘텐츠 기획 연구원</div>
+          <div class="tl-node tl-node-secondary" style="left:141px; top:6px;">03</div>
+        </div>
+      </div></div>
+
+      <div class="persona-goal-grid">
+        <div class="pg-box">
+          <div class="pg-label">Career Persona</div>
+          <div id="persona-list"></div>
+        </div>
+        <div class="pg-box">
+          <div class="pg-label">Career Goal</div>
+          <div id="goal-list"></div>
+        </div>
+      </div>
+
+      <div class="stages-grid" id="stages-grid"></div>
+    </div>
+  </section>
+
+  <!-- PARTNER REVIEW -->
+  <section class="page" data-page="partner">
+    <div class="page-inner">
+      <h1 class="page-title">Partner Review</h1>
+      <p class="page-lede">6년 간의 커리어 과정에서 함께 한 동료들이 표현한 '동료로써의 정은채'입니다.</p>
+      <div class="review-grid" id="review-cards"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">© 2026 Jung Eunchae — Designed with logic &amp; purpose.</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
