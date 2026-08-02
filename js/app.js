@@ -148,8 +148,8 @@
         { title: '전사 인식 관리: ESG 교육', desc: '구축한 체계가 문서로만 남지 않도록, 임직원 대상 ESG 교육을 함께 진행해 현장의 이해도를 높였습니다.' },
       ],
       outcomeSteps: [
-        { title: '2년 만의 자체 ESG 관리 체계 구축', desc: '전사 거버넌스와 데이터 관리 체계를 갖춰, 기업 스스로 ESG를 점검하고 실행할 수 있는 체계를 완성했습니다.' },
-        { title: '외부 평가 등급 상승', desc: '대외 ESG 평가에서 통합 등급이 두 단계 상승하며, 내부 체계의 실질적 개선이 외부에서도 검증받았습니다.', image: 'projects/images/images:shiwon1.png', imageAlt: '신원 ESG Vision House — ESG 전략 체계, ESG Roadmap, 신원 ESG 전략 체계 및 거버넌스 조직도' },
+        { title: '2년 만의 자체 ESG 관리 체계 구축', desc: '전사 거버넌스와 데이터 관리 체계를 갖춰, 기업 스스로 ESG를 점검하고 실행할 수 있는 체계를 완성했습니다.' }, image: 'projects/images/images:shiwon1.png', imageAlt: '신원 ESG Vision House — ESG 전략 체계, ESG Roadmap, 신원 ESG 전략 체계 및 거버넌스 조직도' },
+        { title: '외부 평가 등급 상승', desc: '대외 ESG 평가에서 통합 등급이 두 단계 상승하며, 내부 체계의 실질적 개선이 외부에서도 검증받았습니다.', 
       ],
     },
   ];
