@@ -313,11 +313,31 @@
 
   function renderReviews() {
     const holder = $('#review-cards');
-    holder.innerHTML = reviewsData.map((r) => `
-      <div class="review-card">
+    holder.innerHTML = reviewsData.map((r, i) => `
+      <div class="review-card" style="--reveal-delay:${(i % 3) * 0.08}s">
         <div class="review-quote">"${esc(r.quote)}"</div>
         <div class="review-person">${esc(r.person)}</div>
       </div>`).join('');
+    observeReveal($$('.review-card', holder));
+  }
+
+  function observeReveal(els) {
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      els.forEach((el) => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+    // Safety net: guarantee visibility even if the observer never fires.
+    setTimeout(() => els.forEach((el) => el.classList.add('in')), 1500);
   }
 
   // ---------- project detail ----------

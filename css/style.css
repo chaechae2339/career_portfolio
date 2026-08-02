@@ -698,6 +698,23 @@ button {
   border: var(--bw-thin) solid var(--ink);
   padding: 18px 22px;
   background: #fff;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease;
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.review-card.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .review-quote { font-size: 14.5px; line-height: 1.7; }
