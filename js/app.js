@@ -457,6 +457,12 @@
     window.addEventListener('hashchange', applyRoute);
   }
 
+  function syncHeaderHeightVar() {
+    const header = $('.site-header');
+    if (!header) return;
+    document.documentElement.style.setProperty('--header-h', header.getBoundingClientRect().height + 'px');
+  }
+
   function init() {
     renderHomeIndex();
     renderResume();
@@ -465,6 +471,8 @@
     renderReviews();
     initNav();
     applyRoute();
+    syncHeaderHeightVar();
+    window.addEventListener('resize', syncHeaderHeightVar);
   }
 
   document.addEventListener('DOMContentLoaded', init);

@@ -437,7 +437,15 @@ button {
 .project-detail-view { display: none; }
 .project-detail-view.active { display: block; }
 
-.detail-back-wrap { padding: 24px 48px 0; max-width: 1280px; }
+.detail-back-bar {
+  position: sticky;
+  top: var(--header-h, 73px);
+  z-index: 40;
+  background: var(--paper);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+}
+
+.detail-back-wrap { padding: 16px 48px; max-width: 1280px; }
 
 .back-btn {
   cursor: pointer;
