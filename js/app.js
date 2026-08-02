@@ -486,6 +486,36 @@
     document.documentElement.style.setProperty('--header-h', header.getBoundingClientRect().height + 'px');
   }
 
+  function initHeroTypewriter() {
+    const el = document.getElementById('hero-typewriter');
+    if (!el) return;
+    const fullText = el.textContent;
+    const speed = 90;
+    const initialDelay = 300;
+
+    const cursor = document.createElement('span');
+    cursor.className = 'typewriter-cursor';
+    cursor.textContent = '|';
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.after(cursor);
+      return;
+    }
+
+    el.textContent = '';
+    el.after(cursor);
+
+    let i = 0;
+    function type() {
+      if (i < fullText.length) {
+        el.textContent += fullText[i];
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    setTimeout(type, initialDelay);
+  }
+
   function init() {
     renderHomeIndex();
     renderResume();
@@ -495,6 +525,7 @@
     initNav();
     applyRoute();
     syncHeaderHeightVar();
+    initHeroTypewriter();
     window.addEventListener('resize', syncHeaderHeightVar);
   }
 
