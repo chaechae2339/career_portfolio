@@ -564,6 +564,19 @@ button {
 .pg-step-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
 .pg-step-desc { font-size: 16px; line-height: 1.8; color: #5C574E; }
 
+.pg-step-figure {
+  margin: 16px 0 0;
+  border: 1px solid var(--ink);
+  background: #fff;
+  padding: 14px;
+}
+
+.pg-step-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ---------- Career ---------- */
 
 .career-inner { max-width: 1320px; }
