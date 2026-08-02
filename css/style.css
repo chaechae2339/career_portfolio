@@ -413,13 +413,38 @@ button {
 
 .project-card:hover { background: var(--paper); }
 
+.project-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
 .project-card .tag {
   font-size: 12px;
   font-weight: 800;
   color: #F4F1EA;
   display: inline-block;
   padding: 4px 10px;
-  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.card-detail-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 24.8px;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  color: var(--ink);
+  background: transparent;
+  border: var(--bw-thin) solid var(--ink);
 }
 
 .project-card .title {

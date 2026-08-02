@@ -261,7 +261,10 @@
     const card = document.createElement('div');
     card.className = 'project-card';
     card.innerHTML = `
-      <div class="tag" style="background:${p.color};">${esc(p.tag)}</div>
+      <div class="project-card-head">
+        <div class="tag" style="background:${p.color};">${esc(p.tag)}</div>
+        <span class="card-detail-link">프로젝트 상세히 보기 →</span>
+      </div>
       <div class="title">${esc(p.title)}</div>
       <div class="desc">${esc(p.desc)}</div>`;
     card.addEventListener('click', () => openProject(index));
